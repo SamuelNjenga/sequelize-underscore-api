@@ -9,12 +9,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Task.belongsTo(models.User, {
+        foreignKey: {
+          name: "userId",
+          allowNull: true,
+        },
+      });
     }
   }
   Task.init(
     {
-      task_name: DataTypes.STRING,
-      user_id: DataTypes.INTEGER,
+      taskName: DataTypes.STRING,
+      userId: DataTypes.INTEGER,
     },
     {
       sequelize,

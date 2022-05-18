@@ -9,6 +9,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.hasMany(models.Task, {
+        onDelete: "cascade",
+        foreignKey: {
+          name: "userId",
+          allowNull: true,
+        },
+      });
     }
   }
   User.init(
