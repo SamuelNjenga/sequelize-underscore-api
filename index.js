@@ -24,7 +24,7 @@ config.config();
 const logger = new Logger().logger();
 const server = http.createServer(app);
 
-const PORT = process.env.PORT || 5002;
+const PORT = process.env.PORT || 5001; // 
 
 server.listen(PORT);
 
